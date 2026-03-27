@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The First Sight ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inga mattum extra styles for the image frame */
+        .polaroid-frame {
+            background: white;
+            padding: 10px 10px 15px 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            margin: 15px auto;
+            max-width: 280px; /* Image size control panna */
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .polaroid-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .polaroid-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .caption {
+            font-family: 'Great Vibes', cursive;
+            margin-top: 8px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* Box height control panna */
+        .box {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body onload="createHearts()">
+
+    <div class="box">
+        <span style="font-size: 0.8rem; color: #ff4d6d; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">The Beginning ✨</span>
+        
+        <h1 style="font-family: 'Great Vibes', cursive; font-size: 2.2rem; margin: 10px 0;">The Moment I First Saw You...</h1>
+        
+        <p style="font-size: 0.95rem; line-height: 1.5; color: #444;">
+            Everything started here in college! <br>
+            Neenga college corridors-la Hijab potutu, <br>
+            Unga friends kooda jolly-ah pesite, sirichteye <br>
+            Walk panni poitu irundheenga...anga dhaan ungala naan first time paathen...
+        </p>
+
+        <div class="polaroid-frame">
+            <img src="images/first-sight.png.jpeg" alt="First Sight Memory ✨">
+            <p class="caption">The Memory ✨</p>
+        </div>
+
+        <p style="font-style: italic; font-size: 0.85rem; color: #777; margin-bottom: 15px;">
+            "Andha smile-oda pakume podhu cute-ah irundheenga!"
+        </p>
+
+        <button onclick="next('page3.html')">Ready for Next Memory? ➡️</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); /* Soft Pink to Blue */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    max-width: 80%;
+    animation: zoomIn 0.8s ease;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    color: #ff4d6d;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff758f;
+}
+
+/* Floating Hearts Styling */
+.heart {
+    position: absolute;
+    color: rgba(255, 77, 109, 0.6);
+    font-size: 20px;
+    pointer-events: none;
+    animation: moveUp 4s linear forwards;
+}
+
+@keyframes moveUp {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}

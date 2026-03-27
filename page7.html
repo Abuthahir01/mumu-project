@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Special person, Muja✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* Softer Premium Blue */
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Confetti Container */
+        #confetti-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            padding: 40px 30px;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            z-index: 10;
+            display: none; /* Initially Hidden */
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Gift Button Styling */
+        .gift-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            cursor: pointer;
+            z-index: 20;
+            transition: 0.3s;
+        }
+
+        .gift-container:hover { transform: translate(-50%, -50%) scale(1.1); }
+        
+        .gift-box {
+            font-size: 100px;
+            animation: wobble 1s infinite alternate;
+        }
+
+        @keyframes wobble {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        /* Content Styling inside Glass Card */
+        h1 { font-family: 'Great Vibes', cursive; color: #1e3a8a; font-size: 2.8rem; margin-bottom: 20px; }
+        
+        .message-box {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .message-box p { margin-bottom: 15px; }
+
+        .highlight { color: #1e40af; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        .footer-text { margin-top: 30px; font-weight: 600; color: #1e3a8a; font-size: 1.2rem; display: block; }
+
+        .star-icon { color: #f1c40f; margin: 0 5px; }
+    </style>
+</head>
+<body>
+
+    <div id="confetti-container"></div>
+
+    <div class="gift-container" id="gift-btn" onclick="openGift()">
+        <h2>Finally... 🎁</h2>
+        <div class="gift-box">🎁</div>
+        <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">Click to Open Your Note!</p>
+    </div>
+
+    <div class="glass-card" id="final-card">
+        <h1>Thanks For You, Mumu... <span class="star-icon">✨</span></h1>
+        
+        <div class="message-box">
+            <p>Muja, neenga en life-la enaku kedacha <span class="highlight">Treasure</span>.</p>
+            
+            <p>Enaku evlo <span class="highlight">supportive</span>-ah irundheenga-nu ungala mathri oru person en life-la kedaika nan kuduthu vechi irukanum.</p>
+            
+            <p>Unga kooda inum naraya memories create paṇanum.</p>
+            
+            <p style="font-size: 0.85rem; font-style: italic; color: #576574; margin-top: 5px;">Eduvaraikum ethachi ungala kastha paduthi irunda sorry...</p>
+            
+            <p>Unga kooda pesura oru moments um enaku special than <span class="highlight">Mumu</span>. Neenga en life-la oru best part!</p>
+        </div>
+
+        <div class="footer-text">Always stay with me,Mumu😌 <span style="font-size: 1.5rem;"></span></div>
+    </div>
+
+    <script>
+        function openGift() {
+            // Hide gift button
+            document.getElementById('gift-btn').style.display = 'none';
+            // Show Glass Card with animation
+            document.getElementById('final-card').style.display = 'block';
+            
+            // Trigger Confetti effect
+            createConfetti();
+        }
+
+        // Simple Confetti Animation
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            for(let i=0; i<60; i++) {
+                let div = document.createElement('div');
+                div.style.position = 'absolute';
+                div.style.width = '10px';
+                div.style.height = '10px';
+                // Colors logic
+                div.style.background = ['#3498db', '#f1c40f', '#fff', '#c2e9fb'][Math.floor(Math.random()*4)];
+                div.style.top = Math.random() * -100 + 'px';
+                div.style.left = Math.random() * window.innerWidth + 'px';
+                div.style.borderRadius = '50%';
+                container.appendChild(div);
+
+                let speed = Math.random() * 3 + 3; // speed logic
+                div.animate([
+                    { transform: `translateY(0)` },
+                    { transform: `translateY(${window.innerHeight + 100}px)` }
+                ], { duration: speed * 1000, easing: 'linear' });
+
+                // Remove logic
+                setTimeout(() => div.remove(), speed * 1000);
+            }
+        }
+    </script>
+
+</body>
+</html>
